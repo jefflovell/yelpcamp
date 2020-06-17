@@ -1,0 +1,57 @@
+<%- include('./partials/header') %>
+
+<div class="row">
+    <h1 style="text-align: center">Sign Up</h1>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/register" method="post">
+			<div>
+				<h4>Please set your username and password</h4>
+			</div>
+			
+            <div class="form-group">
+				<label class="text-muted small" for="username">Username <abbr title="required" aria-label="required">*</abbr></label>
+                <input class="form-control" type="text" name="username" placeholder="username" required>
+            </div>
+			<div class="form-group">
+				<label class="text-muted small" for="password">Password <abbr title="required" aria-label="required">*</abbr></label>
+                <input class="form-control" type="password" name="password" placeholder="password" required>
+            </div>
+			<div class="form-group">
+				<label class="text-muted small" for="adminCode">Admin Code </label>
+                <input class="form-control" type="text" name="adminCode" placeholder="if you are an admin, enter your code here">
+            </div>
+			<div>
+				<h4>Introduce yourself!</h4>
+			</div>
+			<div class="form-group">
+				<label class="text-muted small" for="firstName">First Name <abbr title="required" aria-label="required">*</abbr></label>
+                <input class="form-control" type="text" name="firstName" placeholder="first name" required>
+            </div>
+			<div class="form-group">
+				<label class="text-muted small" for="lastName">Last Name <abbr title="required" aria-label="required">*</abbr></label>
+                <input class="form-control" type="text" name="lastName" placeholder="last name" required>
+            </div>
+			<div class="form-group">
+				<label class="text-muted small" for="email">E-Mail <abbr title="required" aria-label="required">*</abbr></label>
+                <input class="form-control" type="email" name="email" placeholder="email@domain.com" required>
+            </div>
+			<div class="form-group">
+				<label class="text-muted small" for="avatar">Profile Image <abbr title="required" aria-label="required">*</abbr></label>
+                <input class="form-control" type="text" name="avatar" placeholder="profile image URL" required>
+            </div>
+			<div>
+				<h4>Tell us a bit about who you are!</h4>	
+			</div>
+			<div class="form-group">
+				<label class="text-muted small" for="bio">Bio <abbr title="required" aria-label="required">*</abbr></label>
+				<textarea class="form-control" type="text" name="bio" placeholder="Tell us about your hobbies and what you like about camping.  What are some of the activities you like to do in the back country? What kind of amenities do you look for?  This information will be displayed on your public profile." required></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+            </div>
+        </form>
+        <a href="/campgrounds">Go Back</a>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,70 @@
+textarea {
+	width: 100%;
+	min-height: 200px;
+}
+
+input.lg-check {
+	width: 20px;
+	height: 20px;
+}
+
+.nav-logo {
+	height: 100%;
+	width: auto;
+}
+
+.ow-any {
+	overflow-wrap: anywhere;
+}
+
+.thumbnail img {
+	width: 100%;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail .caption-full {
+	padding: 10px;
+}
+
+.delete-form {
+	display: inline;
+}
+
+.d-inline {
+	display: inline-block;
+	margin: 10px;
+}
+
+.req {
+	color: red;
+}
+
+.vcenter {
+    display: flex;
+    align-items: center;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#cg-form {
+	margin-top: 20px;
+	padding: 20px;
+	/* background-color: #efefef; */
+	border-radius: 5px;
+}
+
+#cg-form hr {
+	border-color: #ccc;
+	width: 90%;
+}
+
+#cg-submit {
+	margin-top: 20px;
+}

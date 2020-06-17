@@ -1,0 +1,210 @@
+<%- include('../partials/header') %>
+<div class="container">
+	<div class="row">
+		<h1 style="text-align: center">Edit <%=campground.name%></h1>
+	</div>
+	<div class="row">
+		<div class="col">
+			<form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+				<div class="row">
+					<div class="col-md-12">
+						<a class="pull-right" href="/campgrounds">Back To Campgrounds</a>
+						<h4>Basic Information</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="name">Name <span class="req">*</span></label>
+							<input class="form-control" type="text" name="campground[name]" value="<%=campground.name%>">
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="image">Image <span class="req">*</span></label>
+							<input class="form-control" type="text" name="campground[image]" value="<%=campground.image%>">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<div class="form-group">
+							<label for="price">Price per Night <span class="req">*</span></label>
+							<input class="form-control" type="number" name="campground[price]" value="<%=campground.price%>" step="0.01">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="location">Location <span class="req">*</span></label>
+							<input class="form-control" type="text" name="campground[location]" id="location" value="<%= campground.location %>">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="reservation">Reservation URL</label>
+							<input class="form-control" type="text" name="campground[booking]" id="booking" value="<%=campground.booking%>">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="description">Description <span class="req">*</span></label>
+							<textarea class="form-control" rows="5" name="campground[description]"><%=campground.description%></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row vcenter">
+					<div class="col-md-6">						
+						<h4>Campground Amenities</h4>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="walk-ins" name="amenities" value="walk-ins allowed">
+							<label class="form-check-label" for="walk-ins">Walk Ins</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="reservations" name="amenities" value="reservations">
+							<label class="form-check-label" for="reservations">Reservations</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="grill" name="amenities" value="charcoal grill">
+							<label class="form-check-label" for="grill">Grill</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="fire-pit" name="amenities" value="fire pit/ring">
+							<label class="form-check-label" for="fire-pit">Fire Pit</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="picnic-tables" name="amenities" value="picnic tables">
+							<label class="form-check-label" for="picnic-tables">Picnic Tables</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="trash" name="amenities" value="trash cans">
+							<label class="form-check-label" for="trash">Trash</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="bear-box" name="amenities" value="bear boxes">
+							<label class="form-check-label" for="bear-box">Bear Boxes</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="water" name="amenities" value="water hook-up">
+							<label class="form-check-label" for="water">Water</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="electric" name="amenities" value="electric hook-up">
+							<label class="form-check-label" for="electric">Electric</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="sewer" name="amenities" value="sewer hook-up">
+							<label class="form-check-label" for="sewer">Sewer</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="cold-showers" name="amenities" value="cold showers">
+							<label class="form-check-label" for="cold-showers">Cold Showers</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="hot-showers" name="amenities" value="hot showers">
+							<label class="form-check-label" for="hot-showers">Hot Showers</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="bathrooms" name="amenities" value="flush toilets">
+							<label class="form-check-label" for="bathrooms">Bathrooms</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="laundry" name="amenities" value="laundry facilities">
+							<label class="form-check-label" for="laundry">Laundry</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="vending" name="amenities" value="vending machines">
+							<label class="form-check-label" for="vending">Vending Machines</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="store" name="amenities" value="general store">
+							<label class="form-check-label" for="store">General Store</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="food" name="amenities" value="restaurant">
+							<label class="form-check-label" for="food">Restaurant</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="bar" name="amenities" value="bar/cantina">
+							<label class="form-check-label" for="bar">Bar</label>
+						</div>
+					</div>
+					<div class="col-md-6 text-justify">
+						<h4>Campground Hazards</h4>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="wolves" name="alerts" value="wolves">
+							<label class="form-check-label" for="wolves">Wolves</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="bears" name="alerts" value="bears">
+							<label class="form-check-label" for="bears">Bears</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="big-cats" name="alerts" value="big cats">
+							<label class="form-check-label" for="big-cats">Big Cats</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="lg-animals" name="alerts" value="large animals">
+							<label class="form-check-label" for="lg-animals">Large Animals</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="scavengers" name="alerts" value="scavengers">
+							<label class="form-check-label" for="scavengers">Scavengers</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="theft" name="alerts" value="theft">
+							<label class="form-check-label" for="theft">Theft</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="mosquitos" name="alerts" value="mosquitos">
+							<label class="form-check-label" for="mosquitos">Mosquitos</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="ticks" name="alerts" value="ticks/flies">
+							<label class="form-check-label" for="ticks">Ticks/Flies</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="stingers" name="alerts" value="stinging insects">
+							<label class="form-check-label" for="stingers">Biting/Stinging Insects</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="flash-floods" name="alerts" value="flash flooding">
+							<label class="form-check-label" for="flash-floods">Flash Flooding</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="wildfire" name="alerts" value="wild fires">
+							<label class="form-check-label" for="wildfire">Wildfires</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="heat" name="alerts" value="extreme heat">
+							<label class="form-check-label" for="heat">Extreme Heat</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="cold" name="alerts" value="extreme cold">
+							<label class="form-check-label" for="cold">Extreme Cold</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="storms" name="alerts" value="dangerous storms">
+							<label class="form-check-label" for="storms">Storms/Lightning</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="wind" name="alerts" value="high winds">
+							<label class="form-check-label" for="wind">High Winds</label>
+						</div>
+						<div class="form-check d-inline">
+							<input class="form-check-input" type="checkbox" id="back-country" name="alerts" value="extreme isolation">
+							<label class="form-check-label" for="back-country">Back Country</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<button id="cg-submit" class="btn btn-lg btn-default btn-block btn-primary">Submit!</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<%- include('../partials/footer') %>
