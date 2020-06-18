@@ -19,7 +19,8 @@ var express    	  		= require("express"),
 	methodOverride		= require("method-override"),
 	indexRoutes   		= require("./routes/index"),
 	campgroundRoutes 	= require("./routes/campgrounds"),
-	commentRoutes 		= require("./routes/comments");
+	commentRoutes 		= require("./routes/comments"),
+	PORT = process.env.PORT || 5001
 
 //***********************
 //      DATABASES
@@ -77,6 +78,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 //     START SERVER
 //***********************
 
-app.listen(3000, function(){
-	console.log("YelpCamp listening on port 3000");
+app.listen(PORT, function(){
+	console.log("YelpCamp listening on port 5001");
 });
