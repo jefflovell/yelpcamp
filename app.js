@@ -21,13 +21,13 @@ var express    	  		= require("express"),
 	campgroundRoutes 	= require("./routes/campgrounds"),
 	commentRoutes 		= require("./routes/comments"),
 	PORT = process.env.PORT || 5001,
-	DBPASS = process.env.DB_PASSWORD;
+	DBURL = process.env.DBURL;
 
 //***********************
 //      DATABASES
 //***********************
 
-mongoose.connect("mongodb+srv://yelpcampuser:"+ DBPASS +"@cluster0-ovus8.mongodb.net/yelp_camp?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DBURL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //***********************
 //       CONFIGS
