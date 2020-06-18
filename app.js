@@ -20,13 +20,14 @@ var express    	  		= require("express"),
 	indexRoutes   		= require("./routes/index"),
 	campgroundRoutes 	= require("./routes/campgrounds"),
 	commentRoutes 		= require("./routes/comments"),
-	PORT = process.env.PORT || 5001
+	PORT = process.env.PORT || 5001,
+	DBPASS = process.env.DB_PASSWORD;
 
 //***********************
 //      DATABASES
 //***********************
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://yelpcampuser:"+ DBPASS +"@cluster0-ovus8.mongodb.net/yelp_camp?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
 //***********************
 //       CONFIGS
